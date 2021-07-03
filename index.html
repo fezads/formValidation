@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação formulário</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form class="form" method="post" action="">
+            <p>
+                <label for="name">Nome</label>
+                <input type="text" name="name" id="name" autofocus />
+            </p>
+            <p>
+                <label for="dateOfBirth">Data de nascimento</label>
+                <input type="date" name="dateOfBirth" id="dateOfBirth" />
+            </p>
+            <p>
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" />
+            </p>
+            <p>
+                <label for="city">Cidade</label>
+                <input type="text" name="city" id="city" />
+            </p>
+            <p>
+                <button type="submit">Enviar</button>
+            </p>
+        </form>
+        <div class="success-message">
+            Seus dados foram enviados.
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
