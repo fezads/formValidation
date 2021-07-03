@@ -1,16 +1,6 @@
 var form = document.querySelector("form");
+var inputs = document.querySelectorAll(".form__input");
 var successMessage = document.querySelector(".success-message");
-var nameInput = document.getElementById("name");
-var dateOfBirthInput = document.getElementById("dateOfBirth");
-var emailInput = document.getElementById("email");
-var cityInput = document.getElementById("city");
-
-var inputs = [
-    nameInput,
-    dateOfBirthInput,
-    emailInput,
-    cityInput,
-];
 
 inputs.forEach(function (input) {
     input.addEventListener("focus", function () {
@@ -27,25 +17,12 @@ form.addEventListener("submit", function (event) {
     clearAllErrors();
     hideSuccessMessage();
 
-    if (!nameInput.value) {
-        addError(nameInput, "Por favor preencha seu nome");
-        hasErrors = true;
-    }
-
-    if (!dateOfBirthInput.value) {
-        addError(dateOfBirthInput, "Por favor preencha sua data de nascimento");
-        hasErrors = true;
-    }
-
-    if (!emailInput.value) {
-        addError(emailInput, "Por favor preencha seu email");
-        hasErrors = true;
-    }
-
-    if (!cityInput.value) {
-        addError(cityInput, "Por favor preencha sua cidade");
-        hasErrors = true;
-    }
+    inputs.forEach(function (input) {
+        if (!input.value) {
+            addError(input);
+            hasErrors = true;
+        }
+    });
 
     if (hasErrors) {
         return;
@@ -56,7 +33,8 @@ form.addEventListener("submit", function (event) {
     showSuccessMessage();
 })
 
-function addError(input, message) {
+function addError(input) {
+    var message = input.getAttribute("data-error");
     var div = document.createElement("div");
 
     div.classList.add("error-message");

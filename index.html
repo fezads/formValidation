@@ -14,19 +14,23 @@
         <form class="form" method="post" action="">
             <p>
                 <label for="name">Nome</label>
-                <input type="text" name="name" id="name" autofocus />
+                <input class="form__input" type="text" name="name" id="name" data-error="Por favor preencha seu nome"
+                    autofocus />
             </p>
             <p>
                 <label for="dateOfBirth">Data de nascimento</label>
-                <input type="date" name="dateOfBirth" id="dateOfBirth" />
+                <input class="form__input" type="date" name="dateOfBirth" id="dateOfBirth"
+                    data-error="Por favor preencha sua data de nascimento" />
             </p>
             <p>
                 <label for="email">E-mail</label>
-                <input type="email" name="email" id="email" />
+                <input class="form__input" type="email" name="email" id="email"
+                    data-error="Por favor preencha seu email" />
             </p>
             <p>
                 <label for="city">Cidade</label>
-                <input type="text" name="city" id="city" />
+                <input class="form__input" type="text" name="city" id="city"
+                    data-error="Por favor preencha sua cidade" />
             </p>
             <p>
                 <button type="submit">Enviar</button>
